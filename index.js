@@ -13,7 +13,7 @@ mongoose.connect(process.env.DB_CONNECTION_STRING, { useNewUrlParser: true }, ()
     console.log('Database connected.');
 });
 
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
+app.use(morgan('combined'));
 
 app.use(express.json());
 app.use('/auth', authRoute);
